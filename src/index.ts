@@ -19,7 +19,7 @@ interface WebhookPayload {
 app.post('/webhook', (req: Request, res: Response): any => {
   try {
     const payload: WebhookPayload = req.body;
-    console.log('Payload received:', payload);
+    console.log('Payload received:', req.body);
 
     if (!payload.secret) {
       return res.status(400).json({ message: 'Invalid payload' });
